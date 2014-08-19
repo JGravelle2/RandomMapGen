@@ -27,6 +27,18 @@ function Update() {
 	}
 }
 
+private class TileSpawnData {
+	public var tile : GameObject;
+	public var x : int;
+	public var y : int;
+
+	public function TileSpawnData(tile : GameObject, x : int, y : int) {
+		this.tile = tile;
+		this.x = x;
+		this.y = y;
+	}
+}
+
 private function PermuteMap() {
 	// Clean up old map
 	for (var tile : GameObject in spawnedTiles) {
@@ -56,6 +68,7 @@ private function PermuteMap() {
 				newTile.GetComponent.<MapTile>().SetDoors(0);
 			}
 			spawnedTiles.Add(newTile);
+			// tileMap[i,j] = TileSpawnData(newTile, i, j);
 			tileMap[i,j] = newTile;
 		}
 	}
@@ -63,6 +76,7 @@ private function PermuteMap() {
 	// Connect paths
 	for (i = 0; i < w; i++) {
 		for (j = 0; j < h; j++) {
+			// var tileObj = tileMap[i,j].tile;
 			var tileObj = tileMap[i,j];
 			if (tileObj) {
 				var tile = tileObj.GetComponent.<MapTile>();
