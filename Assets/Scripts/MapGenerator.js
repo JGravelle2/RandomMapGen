@@ -52,7 +52,7 @@ private function PermuteMap() {
 				var x = j - h/2;
 				newTile = GameObject.Instantiate(tilePrefab);
 				newTile.transform.parent = transform;
-				newTile.transform.position = new Vector3(x, 0, z);
+				newTile.transform.position = new Vector3(x, 0, z) + transform.position;
 				newTile.GetComponent.<MapTile>().SetDoors(0);
 			}
 			spawnedTiles.Add(newTile);
