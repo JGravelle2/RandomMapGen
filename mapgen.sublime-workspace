@@ -1,0 +1,279 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"selected_items":
+		[
+			[
+				"proje",
+				"Project: Save As"
+			],
+			[
+				"rever",
+				"File: Revert"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jacob/PG_Code/enginestarterapp/starterapp.xcodeproj/project.pbxproj",
+		"/Users/jacob/PG_Code/enginestarterapp/starterapp.xcodeproj/project.pbxproj.orig",
+		"/Users/jacob/.bash_history",
+		"/tmp/subl stdin Ubd33B.txt",
+		"/Users/jacob/dumpTable.sql",
+		"/Users/jacob/.bash_profile",
+		"/Users/jacob/GitHub/enginestarterapp/Externals/pgengine/pgcommon/Externals/zipkit/ZipKit_Prefix.pch",
+		"/Users/jacob/GitHub/enginestarterapp/Tools/AndroidScripts/manual/zipandroidlibs.sh",
+		"/Users/jacob/GitHub/enginestarterapp/Externals/pgengine/pgcommon/Externals/zipkit/ZipKitFW-Info.plist",
+		"/Users/jacob/GitHub/enginestarterapp/ATTRIBUTION",
+		"/Users/jacob/GitHub/enginestarterapp/Classes/Startup/AudioStartupStep.h",
+		"/Users/jacob/GitHub/enginestarterapp/Classes/Startup/AssetPrefetchStartupStep.h",
+		"/Users/jacob/GitHub/enginestarterapp/apportable/overridden_params.template.json",
+		"/Users/jacob/GitHub/enginestarterapp/Externals/pgengine/pgcommon/Externals/OpenUDID/OpenUDID.h",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Startup/AssetManagerStartupStep.h",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Views/AssetPreloadManager.h",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Startup/AudioStartupStep.h",
+		"/Users/jacob/GitHub/rescuerangers/Resources/Audio/ambience_seagulls.mp3",
+		"/Users/jacob/GitHub/rescuerangers/android_config.json",
+		"/Users/jacob/GitHub/rescuerangers/Classes/AdColony/VideoAdsManagerDelegate.h",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Startup/AssetManagerStartupStep.m",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Achievements/AchievementsManager.m",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Achievements/AchievementsManager.h",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Managers/AmbienceSoundManager.m",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Managers/AmbienceSoundManager.h",
+		"/Users/jacob/GitHub/rescuerangers/Externals/pgengine/pgcommon/Externals/cocos2d1x/external/Tremor/asm_arm.h",
+		"/Users/jacob/GitHub/rescuerangers/Resources/Audio/RescueRangers_Mysterious.mp3",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Rewards/RiggedRewardManager.h",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Rewards/RiggedRewardManager.m",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Views/RRLabelRetinaTTF.h",
+		"/Users/jacob/GitHub/rescuerangers/Resources/Parameters/RiggedReward.csv",
+		"/Users/jacob/GitHub/rescuerangers/Rakefile",
+		"/Users/jacob/GitHub/rescuerangers/Resources/Parameters/RewardDistribution.csv",
+		"/Users/jacob/GitHub/rescuerangers/Externals/pgengine/pgcommon/Externals/Twitter+OAuth/ReadMe.txt",
+		"/Users/jacob/GitHub/rescuerangers/RateAppParameters.csv",
+		"/Users/jacob/GitHub/rescuerangers/README.md",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Parameters/SocialChallengeNarrationInfo.m",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Parameters/SocialChallengeNarrationInfo.h",
+		"/Users/jacob/GitHub/rescuerangers/Resources/Parameters/SocialChallengeNarration.csv",
+		"/Users/jacob/GitHub/rescuerangers/Tools/smartCCBRebuild.py",
+		"/Users/jacob/GitHub/rescuerangers/Externals/OldCoreData/SConscript",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Store/StoreObject.h",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Global/SplitTestOptionConstants.h",
+		"/Users/jacob/GitHub/rescuerangers/Classes/Parameters/SocialParameters.h",
+		"/Users/jacob/GitHub/rescuerangers/Classes/SocialChallenge/SocialChallenge.h"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/jacob/PG_Code/enginestarterapp/,*.ccb",
+			"/Users/jacob/PG_Code/enginestarterapp/,*.c*",
+			"/Users/jacob/PG_Code/enginestarterapp/,*.cbb",
+			"/Users/jacob/PG_Code/enginestarterapp/*.cbb",
+			"/Users/jacob/PG_Code/enginestarterapp/**.cbb",
+			"/Users/jacob/PG_Code/enginestarterapp/",
+			"-/Users/jacob/PG_Code/enginestarterapp/Externals/pgengine/pgcommon/Externals/FacebookSDK/,/Users/jacob/PG_Code/enginestarterapp/",
+			"/Users/jacob/PG_Code/enginestarterapp/,-/Users/jacob/PG_Code/enginestarterapp/Externals/pgengine/pgcommon/Externals/FacebookSDK/",
+			"~/PG_Code/enginestarterapp/,-~/PG_Code/enginestarterapp/Externals/pgengine/pgcommon/Externals/FacebookSDK/",
+			"~/PG_Code/enginestarterapp/,-~/PG_Code/enginestarterapp/Externals/pgengine/pgcommon/Externals/FacebookSDK/*",
+			"~/PG_Code/enginestarterapp/*,-~/PG_Code/enginestarterapp/Externals/pgengine/pgcommon/Externals/FacebookSDK/*",
+			"~/PG_Code/enginestarterapp/**,-~/PG_Code/enginestarterapp/Externals/pgengine/pgcommon/Externals/FacebookSDK/*",
+			"~/PG_Code/enginestarterapp,-~/PG_Code/enginestarterapp/Externals/pgengine/pgcommon/Externals/FacebookSDK",
+			"*.m",
+			"",
+			"*.m",
+			"SocialChallenge*",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"App[\\s<>]",
+			"App\\s",
+			"App",
+			"Store",
+			"(R|r)ate",
+			"(R|r)rate",
+			"(R|r)eview",
+			"review",
+			"rate",
+			"forgot password",
+			"rate",
+			"[fbappevent",
+			"header_sear",
+			"rebase",
+			"];\n\n    [[PEDeviceUtility sharedInstance] wipeAllLocalState];\n\n    [self ",
+			",",
+			"hw_name",
+			"\n\n",
+			"\n",
+			">>>>>>>",
+			"$ProjectFolder",
+			"'",
+			"~/Projects",
+			"Unzipper",
+			"zip",
+			"@dynamic identifier",
+			"readwrite.*NSString \\*identifier",
+			"@dynamic identifier",
+			"@dynamic",
+			"dynamic",
+			"readwrite.*NSString \\*identifier",
+			"readonly.*NSString \\*identifier",
+			"read(only|write).*NSString \\*identifier",
+			"readwrite",
+			"read(only|write).*NSString \\*identifier",
+			"readonly.*NSString \\*identifier",
+			"readonly"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			",\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "mapgen.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"zipper",
+				"Externals/pgengine/pgcommon/Classes/Engine/Lib/Unzipper.h"
+			],
+			[
+				"assetmanager.h",
+				"Externals/pgengine/pgcommon/Classes/Engine/Lib/AssetManager.h"
+			],
+			[
+				"asma",
+				"Externals/pgengine/pgcommon/Classes/Engine/Lib/AssetManager.h"
+			],
+			[
+				"scni",
+				"Classes/Parameters/SocialChallengeNarrationInfo.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
