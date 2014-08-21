@@ -11,7 +11,7 @@ private var madeMap = [
 	[0, 1, 1, 3, 3, 3, 1],
 	[1, 3, 3, 3, 2, 1, 1],
 	[0, 1, 3, 3, 3, 1, 3],
-	[1, 3, 1, 2, 3, 3, 3],
+	[1, 3, 1, 3, 3, 3, 3],
 	[3, 3, 3, 2, 3, 2, 1],
 	[1, 2, 3, 3, 3, 1, 0],
 	[0, 0, 2, 3, 1, 0, 0]
@@ -39,6 +39,15 @@ private class TileSpawnData {
 	}
 }
 
+private class PathFindNode {
+	public var tile : TileSpawnData;
+	public var parent : PathFindNode;
+	public function PathFindNode(t : TileSpawnData, p : PathFindNode) {
+		tile = t;
+		parent = p;
+	}
+}
+
 private function PermuteMap() {
 	// Clean up old map
 	for (var tile : GameObject in spawnedTiles) {
@@ -49,7 +58,7 @@ private function PermuteMap() {
 	// Create new map
 	var w = madeMap.length;
 	var h = madeMap[0].length;
-	var tileMap = new GameObject[w, h];
+	var tileMap = new TileSpawnData[w, h];
 	var i = 0;
 	var j = 0;
 	for (i = 0; i < w; i++) {
@@ -67,35 +76,113 @@ private function PermuteMap() {
 				newTile.transform.position = new Vector3(x, 0, z) + transform.position;
 				newTile.GetComponent.<MapTile>().SetDoors(0);
 			}
-			spawnedTiles.Add(newTile);
-			// tileMap[i,j] = TileSpawnData(newTile, i, j);
-			tileMap[i,j] = newTile;
+			if (newTile) {
+				spawnedTiles.Add(newTile);
+				tileMap[i,j] = new TileSpawnData(newTile, i, j);
+			}
 		}
 	}
 
 	// Connect paths
+	var openSet = new List.<TileSpawnData>();
+	var cx : int = 0;
+	var cy : int = 0;
 	for (i = 0; i < w; i++) {
 		for (j = 0; j < h; j++) {
-			// var tileObj = tileMap[i,j].tile;
-			var tileObj = tileMap[i,j];
-			if (tileObj) {
-				var tile = tileObj.GetComponent.<MapTile>();
-				if (tile) {
-					var doors : Dir = 0;
-					for (var k = 0; k < 4; k++) {
-						var s = k % 2 ? 1 : -1;
-						var oi = i + (k / 2 ? 0 : s);
-						var oj = j + (k / 2 ? -s : 0);
-						if (oi >= 0 && oi < w &&
-								oj >= 0 && oj < h &&
-								tileMap[oi,oj]) {
-							var d : Dir = 1 << k;
-							doors |= d;
-						}
-					}
-					tile.SetDoors(doors);
+			if (tileMap[i,j]) {
+				openSet.Add(tileMap[i,j]);
+				cx += i;
+				cy += j;
+			}
+		}
+	}
+	cx = Mathf.RoundToInt(cx cast float / spawnedTiles.Count);
+	cy = Mathf.RoundToInt(cy cast float / spawnedTiles.Count);
+
+	var pathFind = function(start : TileSpawnData, end : TileSpawnData) : List.<TileSpawnData> {
+		var containsTile = function(list : List.<PathFindNode>, t : TileSpawnData) {
+			for (var i = 0; i < list.Count; i++) {
+				var n = list[i];
+				if (n.tile === t) {
+					return true;
+				}
+			}
+			return false;
+		};
+		var toCheck = new List.<PathFindNode>();
+		var checked = new List.<PathFindNode>();
+		toCheck.Add(new PathFindNode(start, null));
+		while (toCheck.Count > 0) {
+			var t = toCheck[0];
+			toCheck.RemoveAt(0);
+			checked.Add(t);
+
+			if (t.tile === end) {
+				var retList = new List.<TileSpawnData>();
+				var cur = t;
+				while (cur) {
+					retList.Add(cur.tile);
+					cur = cur.parent;
+				}
+				return retList;
+			}
+
+			var x = t.tile.x;
+			var y = t.tile.y;
+			var neighbors = [
+				x - 1 >= 0 ? tileMap[x - 1, y] : null,
+				y - 1 >= 0 ? tileMap[x, y - 1] : null,
+				x + 1 < w ? tileMap[x + 1, y] : null,
+				y + 1 < h ? tileMap[x, y + 1] : null
+			];
+			for (var i = 0; i < neighbors.length; i++) {
+				var n = neighbors[i];
+				if (n && !containsTile(checked, n)) {
+					toCheck.Add(new PathFindNode(n, t));
 				}
 			}
 		}
+		return new List.<TileSpawnData>();
+	};
+
+	var center = tileMap[cx, cy];
+	while (!center && spawnedTiles.Count > 0) {
+		center = tileMap[Random.Range(0, w), Random.Range(0, h)];
+	}
+	var p = center.tile.transform.position;
+	Debug.DrawLine(p, p + Vector3(1, 1, 1), Color.red, 1000, false);
+	while (openSet.Count > 0) {
+		var tile = openSet[0];
+		var path = pathFind(tile, center);
+		while (path.Count > 1) {
+			var fst = path[0];
+			var snd = path[1];
+			path.RemoveAt(0);
+			var dy = snd.x - fst.x;
+			var dx = snd.y - fst.y;
+			var d1 : Dir;
+			var d2 : Dir;
+			if (dx == -1) {
+				d1 = Dir.West;
+				d2 = Dir.East;
+			}
+			else if (dx == 1) {
+				d1 = Dir.East;
+				d2 = Dir.West;
+			}
+			else if (dy == -1) {
+				d1 = Dir.North;
+				d2 = Dir.South;
+			}
+			else if (dy == 1) {
+				d1 = Dir.South;
+				d2 = Dir.North;
+			}
+			Debug.DrawLine(fst.tile.transform.position, snd.tile.transform.position, Color.white, 1000, false);
+			fst.tile.GetComponent.<MapTile>().OpenDoors(d1);
+			snd.tile.GetComponent.<MapTile>().OpenDoors(d2);
+			openSet.Remove(fst);
+		}
+		openSet.RemoveAt(0);
 	}
 }
